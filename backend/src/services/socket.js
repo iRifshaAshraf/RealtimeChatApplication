@@ -1,4 +1,3 @@
-// src/services/socket.js (CORRECTED)
 
 import { WebSocketServer } from "ws";
 import { v4 as uuidv4 } from "uuid";
@@ -20,7 +19,7 @@ export function setupSocket(server) {
           return;
         }
 
-        // Send user message back --- replying to user
+        // Send user message back --- replying/ texting to user
         ws.send(JSON.stringify({ role: "user", text: payload.text }));
 
         // Get bot reply  -- user message

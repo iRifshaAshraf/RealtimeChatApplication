@@ -14,11 +14,13 @@ interface ApiResponse {
   error?: string;
 }
 
+
 // --- Constants backend URL ---
 // ! using exclamatory symbol becasue in typescript - '!' means it has to be here (like it's important)
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL!;
 
 // --- API Helper ---
+
 const fetchChatResponse = async (payload: object): Promise<ApiResponse> => {
   const res = await fetch(BACKEND_URL, {
     method: "POST",

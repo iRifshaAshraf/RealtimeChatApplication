@@ -4,7 +4,7 @@ import { createServer } from "http";
 import dotenv from "dotenv";
 import { detectIntent } from "./controllers/chatbotController.js";
 
-dotenv.config();
+dotenv.config(); //it's a library
 
 const app = express();
 
@@ -16,8 +16,8 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 
-app.use(cors(corsOptions));
-app.use(express.json());
+app.use(cors(corsOptions));  // easily access to backend
+app.use(express.json());   //parses JSON requests automatically
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -94,5 +94,4 @@ server.listen(PORT, () => {
   console.log('SERVER STARTED SUCCESSFULLY');
   console.log('='.repeat(60));
   console.log(`Server: http://localhost:${PORT}`);
-  console.log('\n Test these URLs in browser:');
 });
